@@ -1,3 +1,8 @@
+# Grocery App with React
+Grocery App akin to a Todo app where you can add items to grocery list and check them off when acquired.
+
+Execute `npm start` after cloning to run in the dev server.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
