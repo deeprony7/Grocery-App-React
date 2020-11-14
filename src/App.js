@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import GroceryItem from './GroceryItem';
 import NewItemForm from './NewItemForm';
 
 class App extends Component {
@@ -24,6 +25,7 @@ class App extends Component {
       ]
     }
     this.addGroceryItem = this.addGroceryItem.bind(this)
+    this.toggleItem = this.toggleItem.bind(this)
   }
 
   addGroceryItem(groceryItem) {
@@ -31,6 +33,15 @@ class App extends Component {
     items.push(groceryItem)
     this.setState({
       items:items
+    })
+  }
+
+  toggleItem(index) {
+    let items = this.state.items.slice()
+    let item = items[index]
+    item.purchased = !item.purchased
+    this.setState({
+      items: items
     })
   }
 
@@ -48,19 +59,8 @@ class App extends Component {
               <div className="my-5">
                 <ul>
                   {this.state.items.map((item, index) => (
-                    <li key={index}>
-                      <label
-                        className="checkbox"
-                        style={{
-                          textDecoration: item.purchased
-                            ? "line-through"
-                            : "none",
-                        }}
-                      >
-                        <input checked={item.purchased} className="mr-3" type="checkbox" />
-                        {item.name} <span className="has-text-weight-light">({item.number})</span>
-                      </label>
-                    </li>
+                    <GroceryItem key={index} item={item}
+                    toggleItem={()=> this.toggleItem(index)} />
                   ))}
                 </ul>
               </div>
