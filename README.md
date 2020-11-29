@@ -1,6 +1,8 @@
 # Grocery App with React
 Grocery App akin to a Todo app where you can add items to grocery list and check them off when acquired.
 
+Deployed at: https://stoic-bell-c68458.netlify.app
+
 Execute `npm start` after cloning to run in the dev server.
 
 # Getting Started with Create React App
